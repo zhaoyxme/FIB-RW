@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTE FIB-RW Practice</title>
+<style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    select { margin: 0 5px; }
+    .submit-btn { margin-top: 20px; padding: 10px 15px; font-size: 16px; }
+    .result { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>PTE FIB-RW Practice</h2>
+
+<p>
+Business has to satisfy people's needs and wants by producing goods and services. Essential goods and services required for human survival, 
+<select id="q1">
+    <option value="">--Select--</option>
+    <option value="such as">such as</option>
+    <option value="like">like</option>
+    <option value="including">including</option>
+    <option value="for example">for example</option>
+</select>
+food, water, shelter, etc. Goods and services which people would like to have but which is not essential for living, examples 
+<select id="q2">
+    <option value="">--Select--</option>
+    <option value="include">include</option>
+    <option value="such as">such as</option>
+    <option value="like">like</option>
+    <option value="are">are</option>
+</select>
+luxury house, new PC, car and watching movies, etc. 
+<select id="q3">
+    <option value="">--Select--</option>
+    <option value="Unfortunately">Unfortunately</option>
+    <option value="Fortunately">Fortunately</option>
+    <option value="Interestingly">Interestingly</option>
+    <option value="Surprisingly">Surprisingly</option>
+</select>
+, people's wants are never satisfied; they are infinite/unlimited. The resources available to businesses are finite. There are not enough factors of production to make all of the goods and services 
+<select id="q4">
+    <option value="">--Select--</option>
+    <option value="that">that</option>
+    <option value="which">which</option>
+    <option value="what">what</option>
+    <option value="who">who</option>
+</select>
+satisfy people's needs and unlimited wants.
+</p>
+
+<button class="submit-btn" onclick="checkAnswers()">Submit</button>
+
+<p class="result" id="result"></p>
+
+<script>
+function checkAnswers() {
+    const answers = {
+        q1: "such as",
+        q2: "include",
+        q3: "Unfortunately",
+        q4: "that"
+    };
+    let score = 0;
+    for (let key in answers) {
+        const userAnswer = document.getElementById(key).value;
+        if (userAnswer === answers[key]) score++;
+    }
+    document.getElementById("result").textContent = `You got ${score} out of 4 correct.`;
+}
+</script>
+
+</body>
+</html>
